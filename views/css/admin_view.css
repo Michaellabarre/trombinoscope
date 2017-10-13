@@ -1,0 +1,517 @@
+/* ******************** *\
+      GLOBAL ELEMENTS
+/* ******************** */
+
+html { height: 100%; }
+
+* {-moz-box-sizing: border-box; box-sizing: border-box;}
+
+body
+{
+    font-family: "Segoe UI Symbol";
+    text-align: center;
+    background-color: #333;
+    /*background-image: url('../../data/images/background.jpg');*/
+    color: lightgray;
+    margin: 0;
+    min-height: 95%;
+    height: 95%;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+hr
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+a
+{
+    color: lightgray;
+    text-decoration: none;
+    transition: 0.7s;
+}
+
+a:hover
+{
+    color: #666;
+}
+
+fieldset
+{
+    min-height: 1%;
+    height: 1%;
+    float: left;
+    margin-left: 25px;
+    border-color: lightgray;
+    background-color: #222;
+    transition: 0.7s;
+}
+
+fieldset:hover
+{
+    border-color: #666;
+}
+
+
+/* ******************** *\
+        Dialog
+/* ******************** */
+
+#div_dialog_overlay
+{
+    display: none;
+    opacity: .5;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    width: 100%;
+    z-index: 10;
+}
+
+#div_dialog_box
+{
+    display: none;
+    position: fixed;
+    background: #4486F6;
+    box-shadow: 10px 10px 5px #333;
+    width: 500px;
+    z-index: 10;
+}
+
+#div_dialog_box > div
+{
+    background: #FFF;
+    margin: 8px;
+}
+
+#div_dialog_box > div > #div_dialog_box_head
+{
+    background: #333;
+    font-size: 19px;
+    padding: 10px;
+    color: #CCC;
+}
+
+#div_dialog_box > div > #div_dialog_box_body
+{
+    background: #999;
+    padding: 20px;
+    color: #FFF;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    
+    font-family: "Consolas";
+}
+
+#div_dialog_box > div > #div_dialog_box_foot
+{
+    background: #333;
+    padding: 10px;
+    text-align: right;
+}
+
+.btn_dialog
+{
+    margin-right: 5px;
+    background-color: #4486F6;
+    border: 2px solid #4486F6;
+    color: white;
+    height: 25px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.btn_dialog:hover
+{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: white;
+}
+/* ******************** *\
+    LOADER
+/* ******************** */
+
+#div_loader { display: none; }
+
+.loader
+{
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.circles
+{
+    border-radius: 35px;
+    border: 3px solid transparent;
+    border-top-color: #4486F6;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+.circles:after
+{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 35px;
+    border: 3px solid transparent;
+    border-top-color: #4486F6;
+    border-left-color: #4486F6;
+    opacity: 0.8;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+.dot
+{
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
+}
+
+@keyframes spin
+{
+    0% { transform: rotate(0deg); }
+    100% {transform: rotate(360deg); }
+}
+
+
+/* ******************** *\
+        CLASSES
+/* ******************** */
+
+
+.fig_student
+{
+    float: left;
+    width: 64px;
+    height: 100px;
+    margin-left: 0px;
+    font-size: 12px;
+}
+
+.img_student
+{
+    width: 64px;
+    height: 64px;
+}
+
+.ipt_file
+{
+    width: 138px;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+#div_group
+{
+    overflow-y: scroll;
+    padding-top: 10px;
+    margin-top: 8px;
+    max-height: 94%;
+    min-height: 94%;
+    width: 100%;
+    border: inset lightgray;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.ipt_submit
+{
+    margin-top: 5px;
+    width: 66px;
+    background-color: #666;
+    color: white;
+    border: 2px solid #666;
+    cursor: pointer;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.7s;
+}
+
+.left { margin-right: 3px; background-image: url('../../data/images/confirm.png'); }
+.right { background-image: url('../../data/images/trash.png'); }
+
+.ipt_submit:hover
+{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: white;
+}
+
+.ipt_text_left, .ipt_text_right
+{
+    width: 67px;
+    outline: none;
+    background-color: #222;
+    color: white;
+    border: 2px solid #666;
+    text-indent: 2px;
+    transition: 0.7s;
+}
+
+.ipt_text_left { margin-right: 3px; }
+
+.ipt_text_left:focus, .ipt_text_right:focus { border-color: white; }
+
+.button:disabled
+{
+    background-color: #333;
+    border-color: #333;
+    cursor: default;
+}
+
+.button:disabled:hover
+{
+    border-color: #333;
+    background-color: #333;
+}
+
+.div_student_edit
+{
+    text-align: center;
+    width: 145px;
+    float: left;
+    margin-left: 0px;
+    margin-bottom: 15px;
+}
+
+.div_students_edit { width: 100%; }
+
+.button, .btn_info
+{
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.btn_info
+{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: #4486F6;
+    border: 2px solid #4486F6;
+    color: white;
+    outline: none;
+    transition: 0.7s;
+}
+
+.pdf, .valid, .getid
+{
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.pdf { background-image: url('../../data/images/pdf.png'); }
+.valid { background-image: url('../../data/images/accept.png'); }
+.getid { background-image: url('../../data/images/list.png'); text-indent: 10px; }
+
+
+.btn_info:hover
+{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: white;
+}
+
+.error_message { color: #F64444; }
+
+.button
+{
+    width: 155px;
+    height: 32px;
+    border: 2px solid #4486F6;
+    background-color: #4486F6;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: 0.7s;
+}
+
+.button:hover
+{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: white;
+}
+
+.button:active 
+{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: darkred;
+}
+
+.deconnect
+{
+    margin: 0px;
+    margin-top: 10px;
+    background-image: url('../../data/images/log_out.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #666;
+    border-color: #666;
+}
+
+.btn_group, #btn_add_student
+{
+    height: 32px;
+    vertical-align: middle;
+    padding-left: 28px;
+    margin-bottom: 5px;
+    width: 23%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #666;
+    border: 2px solid #666;
+    cursor: pointer;
+    outline: none;
+    transition: 0.7s;
+}
+
+.btn_group:hover, #btn_add_student:hover
+{
+    background-color: rgba(0, 0, 0, 0);
+    border-color: white;
+}
+
+.display { background-image: url('../../data/images/magnifier.png'); margin-left: 9px; border-right-color: white; }
+.edit { background-image: url('../../data/images/edit.png'); border-left-width: 0px; border-right-width: 0px; }
+.delete { background-image: url('../../data/images/delete.png'); border-left-color: white;  }
+.add, #btn_add_student
+{
+    font-size: 19px;
+    width: 32px;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    text-align: center;
+    float: none;
+}
+
+#btn_add_student
+{
+    margin-top: 45px;
+    padding-top: 3px;
+    margin-left: 10px;
+    float: left;
+}
+/* ******************** *\
+           ID
+/* ******************** */
+
+
+#fset_group 
+{ 
+    width: 19%;
+    padding: 0;
+    text-align: center;
+}
+
+#fset_connexion_info
+{ 
+    width: 19%;
+    text-align: left;
+}
+
+#div_content 
+{
+    width: 100%;
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-top: inset lightgray;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#div_action_list
+{
+    width: 100%;
+    height: 11%;
+    overflow: hidden;
+    border-top: inset lightgray;
+}
+
+#div_action_content { display: none; }
+
+#fset_content
+{
+    min-width: 55%;
+    max-width: 55%;
+    padding: 0;
+    padding-top: 5px;
+}
+
+/* ******************** *\
+      INPUT FILE
+/* ******************** */
+
+.js .input-file-container 
+{
+    position: relative;
+    width: 155px;
+    height: 32px;
+    margin: 5px;
+    float: left;
+}
+
+.js .input-file-trigger 
+{
+    display: block;
+    font-family: "Segoe UI Symbol";
+    font-size: 14px;
+    padding: 4px;
+    width: 155px;
+    height: 32px;
+    background: #4486F6;
+    background-image: url('../../data/images/csv.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    color: #FFF;
+    cursor: pointer;
+    outline: none;
+    transition: all .7s;
+    border: 2px solid #4486F6;
+}
+
+.js .input-file 
+{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100px;
+    height: 32px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.js .input-file:hover + .input-file-trigger,
+.js .input-file-trigger:hover
+{
+    background: rgba(0, 0, 0, 0);
+    background-image: url('../../data/images/csv.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    border-color: white;
+}

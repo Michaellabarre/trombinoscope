@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Trombinoscope</title>
+        
+        <link rel="icon" href="./data/images/favicon.png"/>
+        <link rel="stylesheet" href="./views/css/authentification.css"/>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./views/js/authentification.js"></script>
+        
+    </head>
+    
+    <header>
+        <a href="#">
+            <h1>IUT Metz - Trombinoscope</h1>
+        </a>
+        <hr>
+    </header>
+    
+    <body>
+        <br><br>
+        
+        <div id="div_content">
+            <h4>Veuillez vous identifier pour continuer</h4>
+
+            <div id="error_message">Accès refusé, nom d'utilisateur ou mot de passe erroné.</div>
+            <div id="div_loader">
+                <span class="loader circles"><span class="loader dot"></span></span>
+                Chargement en cours...
+            </div>
+            <br>
+            <form method="POST" action="./controllers/authentification.php" id="form_connexion">
+                <input name="username" placeholder="Nom d'utilisateur" autocomplete="off"/>
+                <br/><br/>
+                <input name="password" type="password" placeholder="Mot de passe"/>
+                <br/><br/>
+                <button class="btn_submit">Connexion</button>
+            </form>
+        </div>
+    </body>
+    <br/>
+    
+    <footer>
+        <hr>
+        </p>
+        <p>
+            © 2016 IUT Metz <br/>
+            <a href="./views/about.html">À propos</a>
+        </p>
+    </footer>
+    
+</html>
